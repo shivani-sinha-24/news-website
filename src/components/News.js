@@ -29,7 +29,7 @@ const News = (props)=> {
   }
   
   useEffect(()=>{
-    document.title=`NewsToday India- ${capitalizedFirstLetter(props.category)} News`
+    document.title=`NewsToday Bharat- ${capitalizedFirstLetter(props.category)} News`
     updateNews()
     //eslint-disable-next-line
   },[])
@@ -61,12 +61,12 @@ const News = (props)=> {
 
     return (
       <>
-        <h1 className='text-center' style={{margin:'90px 35px 0'}}><b>NewsToday India - Top {capitalizedFirstLetter(props.category)} Headlines</b></h1>
+        <h1 className='text-center' style={{margin:'90px 35px 0'}}><b>NewsToday Bharat - Top {capitalizedFirstLetter(props.category)} Headlines</b></h1>
         {loading&&<Spinner/>}
         <InfiniteScroll
-          dataLength={articles.length}
+          dataLength={articles?.length}
           next={fetchMoreData}
-          hasMore={articles.length<totalResults?true:false}
+          hasMore={articles?.length<totalResults?true:false}
           loader={<Spinner/>}
         >
           <div className="container">
